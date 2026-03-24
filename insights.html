@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDMM90P63D"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDMM90P63D');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Arena Business Advisors</title>
+<link rel="stylesheet" href="arena-styles.css">
+<style>
+  .insights-intro {
+    padding: 64px 0;
+    background: var(--white);
+    text-align: center;
+    border-bottom: 1px solid var(--linen);
+  }
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  .filter-tab {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--slate);
+    background: transparent;
+    border: 1.5px solid var(--linen);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .filter-tab:hover { border-color: var(--warm); color: var(--warm-deep); }
+  .filter-tab.active {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+  }
+
+  .blog-grid-section {
+    padding: 64px 0 100px;
+    background: var(--white);
+  }
+
+  /* Featured post */
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--linen);
+    margin-bottom: 48px;
+  }
+  .featured-img {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 380px;
+    position: relative;
+  }
+  .featured-img::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 60%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(200,169,110,0.08) 0%, transparent 60%);
+  }
+  .featured-img .tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--warm); background: rgba(200,169,110,0.15);
+    padding: 5px 12px; border-radius: 100px;
+    margin-bottom: 16px; position: relative; z-index: 1;
+    align-self: flex-start;
+  }
+  .featured-img h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: white; line-height: 1.2;
+    position: relative; z-index: 1;
+    margin-bottom: 12px;
+  }
+  .featured-img .excerpt {
+    font-size: 15px; color: rgba(255,255,255,0.5);
+    line-height: 1.6; position: relative; z-index: 1;
+  }
+  .featured-meta {
+    padding: 48px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    background: var(--parchment);
+  }
+  .featured-meta .date {
+    font-size: 12px; color: var(--stone);
+    font-weight: 600; letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  .featured-meta .read-excerpt {
+    font-size: 15px; color: var(--slate);
+    line-height: 1.75; margin-bottom: 28px;
+  }
+  .featured-meta .author-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px;
+  }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--ink); color: var(--warm);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .author-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .author-title { font-size: 12px; color: var(--stone); }
+
+  /* Post grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .post-card {
+    border-radius: 16px;
+    border: 1px solid var(--linen);
+    overflow: hidden;
+    background: var(--white);
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+  .post-card-img {
+    height: 180px;
+    position: relative;
+  }
+  .post-card-img .tag {
+    position: absolute; top: 14px; left: 14px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .post-card-body {
+    padding: 24px;
+  }
+  .post-card-body .date {
+    font-size: 12px; color: var(--stone);
+    font-weight: 500; margin-bottom: 10px;
+  }
+  .post-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--ink); margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .post-card-body p {
+    font-size: 14px; color: var(--slate);
+    line-height: 1.6;
+  }
+  .post-card-body .read-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600;
+    color: var(--warm-deep); margin-top: 16px;
+  }
+  .post-card-body .read-more svg { width: 14px; height: 14px; }
+
+  /* Newsletter */
+  .newsletter {
+    padding: 80px 0;
+    background: var(--parchment);
+    text-align: center;
+  }
+  .newsletter-box {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .newsletter-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--ink); margin-bottom: 12px;
+  }
+  .newsletter-box p {
+    font-size: 15px; color: var(--slate);
+    line-height: 1.6; margin-bottom: 28px;
+  }
+  .newsletter-form {
+    display: flex; gap: 10px;
+  }
+  .newsletter-form input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1.5px solid var(--linen);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-form input:focus { border-color: var(--warm); }
+  .newsletter-form input::placeholder { color: var(--sand); }
+  .newsletter-fine {
+    font-size: 12px; color: var(--stone);
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="top-bar">
+  <span>Operators Helping Operators &mdash; <a href="about.html">Learn Our Story</a></span>
+  <div class="top-bar-right">
+    <a href="mailto:support@thearenapartners.com">support@thearenapartners.com</a>
+    <a href="tel:+17133447420" style="color:var(--warm);font-weight:600;">(713) 344-7420</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a>
+    <ul class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">How We Help</a>
+      <a href="process.html">Process</a>
+      <a href="results.html">Results</a>
+      <a href="insights.html" class="active">Insights</a>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+17133447420" class="nav-phone"><span class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>(713) 344-7420</a>
+    <a href="contact.html" class="btn btn-gold">Book a Strategy Call</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-eyebrow">Insights</div>
+    <h1>Dispatches From the Arena</h1>
+    <p>Operator-tested ideas on growth, leadership, and building practices that last. No fluff, no theory&mdash;just what works.</p>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="insights-intro">
+  <div class="container">
+    <div class="filter-tabs">
+      <a href="#" class="filter-tab active">All</a>
+      <a href="#" class="filter-tab">Growth</a>
+      <a href="#" class="filter-tab">Operations</a>
+      <a href="#" class="filter-tab">Leadership</a>
+      <a href="#" class="filter-tab">Financial</a>
+      <a href="#" class="filter-tab">Exit Planning</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid-section">
+  <div class="container">
+
+    <!-- Featured -->
+    <div class="featured-post">
+      <div class="featured-img">
+        <span class="tag">Growth Strategy</span>
+        <h2>The Professional Services Growth Trap: Why Working Harder Stops Working</h2>
+        <p class="excerpt">Most practice owners hit a ceiling around $2-5M in revenue. Here's the structural reason why&mdash;and the three shifts that break through it.</p>
+      </div>
+      <div class="featured-meta">
+        <div class="date">March 18, 2026 &bull; 8 min read</div>
+        <p class="read-excerpt">Every professional services firm hits the same wall. Revenue correlates directly to the founder's personal capacity. When you can't add more hours, growth stops. But the solution isn't about working harder&mdash;it's about restructuring how value gets delivered.</p>
+        <div class="author-row">
+          <div class="author-avatar">A</div>
+          <div><div class="author-name">Arena Team</div><div class="author-title">Operators Helping Operators</div></div>
+        </div>
+        <a href="#" class="btn btn-dark">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Post Grid -->
+    <div class="posts-grid">
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #1A2332, #2D3748);">
+          <span class="tag" style="color:var(--warm);background:rgba(200,169,110,0.2);">Operations</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">March 10, 2026 &bull; 6 min read</div>
+          <h3>The Decision Bottleneck: How to Stop Being Your Firm's Single Point of Failure</h3>
+          <p>If your team can't make decisions without you, you don't have a team&mdash;you have a dependency. Here's how to fix it.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #2D3748, #4A5568);">
+          <span class="tag" style="color:#6B8F71;background:rgba(107,143,113,0.2);">Leadership</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">February 28, 2026 &bull; 5 min read</div>
+          <h3>Hiring Your First Non-Clinical Leader: A Guide for Practice Owners</h3>
+          <p>Your first operations or business manager hire is the most leveraged decision you'll make. Here's how to get it right.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #0D1117, #1A2332);">
+          <span class="tag" style="color:var(--accent-rust);background:rgba(199,91,59,0.2);">Financial</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">February 15, 2026 &bull; 7 min read</div>
+          <h3>The Profit Leaks Hiding in Every Professional Services P&amp;L</h3>
+          <p>You know your top line. But do you know where your margins are quietly eroding? Five common leaks and how to plug them.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #162236, #2A4365);">
+          <span class="tag" style="color:var(--warm);background:rgba(200,169,110,0.2);">Growth Strategy</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">February 3, 2026 &bull; 6 min read</div>
+          <h3>Beyond Referrals: Building Predictable Client Acquisition for Your Practice</h3>
+          <p>Word-of-mouth built your practice. It won't double it. How to build repeatable acquisition without losing your professional reputation.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #2D3748, #1A2332);">
+          <span class="tag" style="color:#6B8F71;background:rgba(107,143,113,0.2);">Exit Planning</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">January 20, 2026 &bull; 8 min read</div>
+          <h3>Is Your Practice Sellable? The 5 Questions Every Owner Should Answer Now</h3>
+          <p>Even if you're not selling for years, these questions reveal the structural weaknesses that suppress your firm's value today.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="post-card">
+        <div class="post-card-img" style="background:linear-gradient(135deg, #0D1117, #2D3748);">
+          <span class="tag" style="color:var(--warm);background:rgba(200,169,110,0.2);">Operations</span>
+        </div>
+        <div class="post-card-body">
+          <div class="date">January 8, 2026 &bull; 5 min read</div>
+          <h3>SOPs That Actually Get Followed: A Practical Framework</h3>
+          <p>Your team isn't ignoring your processes because they're lazy. They're ignoring them because the processes are built wrong. Here's a better approach.</p>
+          <span class="read-more">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-box">
+      <h3>The Arena Dispatch</h3>
+      <p>One operator-tested insight per week. No spam, no fluff&mdash;just the ideas that move the needle for professional services leaders.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button class="btn btn-gold btn-lg">Subscribe</button>
+      </div>
+      <div class="newsletter-fine">Join 2,400+ practice owners. Unsubscribe anytime.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-eyebrow">Ready for More Than Insights?</div>
+    <h2>Turn Ideas Into Action.<br>Let's Talk.</h2>
+    <p class="desc">Reading is great. But implementation is where outcomes live. Let's discuss what's possible for your specific practice.</p>
+    <div class="cta-row">
+      <a href="contact.html" class="btn btn-gold btn-xl">Book Your Free Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:+17133447420" class="cta-phone-btn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (713) 344-7420</a>
+    </div>
+    <div class="cta-fine">No contracts. No obligation. No critics on the sidelines.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a><p>Former founders and operators delivering resilience, action, and deep partnership to professional services firms.</p><a href="tel:+17133447420" class="footer-phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(713) 344-7420</a></div>
+      <div class="footer-col"><h5>How We Help</h5><a href="services.html">Operations</a><a href="services.html">Growth Strategy</a><a href="services.html">Team & Leadership</a><a href="services.html">Financial Clarity</a><a href="services.html">Exit Planning</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">Our Story</a><a href="process.html">The Arena Process</a><a href="results.html">Client Results</a><a href="insights.html">Insights</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Book a Call</a><a href="#">LinkedIn</a><a href="mailto:support@thearenapartners.com">Email Us</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Arena Business Advisors. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+</body>
+</html>

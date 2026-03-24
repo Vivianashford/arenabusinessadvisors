@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDMM90P63D"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDMM90P63D');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Arena Business Advisors</title>
+<link rel="stylesheet" href="arena-styles.css">
+<style>
+  /* ===== ABOUT UNIQUE STYLES ===== */
+  .origin-section {
+    padding: 100px 0;
+    background: var(--white);
+  }
+  .origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .origin-text .eyebrow {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--warm-deep); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .origin-text .eyebrow::before {
+    content: ''; width: 24px; height: 1.5px; background: var(--warm);
+  }
+  .origin-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700;
+    color: var(--ink); margin-bottom: 24px;
+    line-height: 1.2; letter-spacing: -0.5px;
+  }
+  .origin-text p {
+    font-size: 16px; color: var(--slate);
+    line-height: 1.75; margin-bottom: 20px;
+  }
+  .origin-text p strong { color: var(--ink); }
+
+  .quote-block {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-block::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--warm), var(--warm-glow), var(--warm));
+  }
+  .quote-block::after {
+    content: '\201C'; position: absolute;
+    top: 10px; right: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 140px; color: rgba(200,169,110,0.06);
+    line-height: 1; pointer-events: none;
+  }
+  .quote-block blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 500;
+    font-style: italic; line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+  .quote-attr {
+    display: flex; align-items: center; gap: 14px;
+    position: relative; z-index: 1;
+  }
+  .quote-attr .line { width: 28px; height: 1.5px; background: var(--warm); }
+  .quote-attr .name {
+    font-size: 13px; font-weight: 600;
+    color: var(--warm); letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Values */
+  .values-section {
+    padding: 100px 0;
+    background: var(--parchment);
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .value-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px 36px;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: all 0.3s;
+  }
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  }
+  .value-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+  .value-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--ink); margin-bottom: 12px;
+  }
+  .value-card p {
+    font-size: 14.5px; color: var(--slate); line-height: 1.65;
+  }
+
+  /* Difference section */
+  .difference {
+    padding: 100px 0;
+    background: var(--ink);
+    color: var(--white);
+  }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+  }
+  .diff-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid;
+  }
+  .diff-col.traditional h3 { color: var(--sand); border-color: rgba(255,255,255,0.1); }
+  .diff-col.arena h3 { color: var(--warm); border-color: var(--warm); }
+  .diff-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .diff-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .diff-col.traditional .diff-icon {
+    background: rgba(255,255,255,0.05);
+    color: var(--sand);
+  }
+  .diff-col.arena .diff-icon {
+    background: rgba(200,169,110,0.15);
+    color: var(--warm);
+  }
+  .diff-item p {
+    font-size: 15px; line-height: 1.6;
+  }
+  .diff-col.traditional .diff-item p { color: rgba(255,255,255,0.4); }
+  .diff-col.arena .diff-item p { color: rgba(255,255,255,0.75); }
+</style>
+</head>
+<body>
+
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>Operators Helping Operators &mdash; <a href="index.html">Learn Our Story</a></span>
+  <div class="top-bar-right">
+    <a href="mailto:support@thearenapartners.com">support@thearenapartners.com</a>
+    <a href="tel:+17133447420" style="color:var(--warm);font-weight:600;">(713) 344-7420</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a>
+    <ul class="nav-links">
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">How We Help</a>
+      <a href="process.html">Process</a>
+      <a href="results.html">Results</a>
+      <a href="insights.html">Insights</a>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+17133447420" class="nav-phone">
+      <span class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+      (713) 344-7420
+    </a>
+    <a href="contact.html" class="btn btn-gold">Book a Strategy Call</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-eyebrow">Our Story</div>
+    <h1>We've Been Where You Are.<br>That's Why We're Here.</h1>
+    <p>Arena was founded by operators who built, scaled, and sometimes broke the same kinds of businesses our clients run. We know what it takes because we've lived it.</p>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section class="origin-section">
+  <div class="container">
+    <div class="origin-grid">
+      <div class="origin-text">
+        <div class="eyebrow">The Name</div>
+        <h2>Why "Arena"?</h2>
+        <p>Our name comes from Theodore Roosevelt's legendary 1910 speech about the man in the arena&mdash;the one whose face is marred by dust and sweat, who strives valiantly, who errs and falls short again and again, but who <strong>dares greatly</strong>.</p>
+        <p>That's who we serve. Not the critics on the sidelines. Not the commentators in the cheap seats. <strong>The professionals who are actually in the fight</strong>&mdash;building practices, leading teams, serving clients, carrying payroll.</p>
+        <p>And that's who we are. Former founders and operators who got in the arena ourselves, earned our scars, and came out the other side with frameworks that actually work.</p>
+      </div>
+      <div class="origin-visual">
+        <div class="quote-block">
+          <blockquote>It is not the critic who counts; not the man who points out how the strong man stumbles. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood&hellip; who, at the best, knows the triumph of high achievement, and who, at the worst, if he fails, at least fails while daring greatly.</blockquote>
+          <div class="quote-attr">
+            <div class="line"></div>
+            <div class="name">Theodore Roosevelt, 1910</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">What We Believe</div>
+      <h2 class="section-title">Three Principles. Zero Exceptions.</h2>
+      <p class="section-desc">Every engagement, every conversation, every recommendation is filtered through these beliefs.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon" style="background:rgba(200,169,110,0.1);">&#9876;&#65039;</div>
+        <h4>Resilience</h4>
+        <p>We don't build fragile strategies that crumble at the first disruption. We build practices that absorb shocks, adapt fast, and come out stronger. Resilience isn't a nice-to-have&mdash;it's the foundation.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:rgba(107,143,113,0.1);">&#9889;</div>
+        <h4>Action</h4>
+        <p>Strategy without execution is decoration. We move fast, make decisions with imperfect information, and course-correct in real time. Our clients don't need another planning session&mdash;they need momentum.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:rgba(199,91,59,0.1);">&#129309;</div>
+        <h4>Deep Partnership</h4>
+        <p>We don't consult from a distance. We sit beside you, share the weight, and stay until the work is done. Your wins are our wins. Your problems keep us up at night too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow" style="color:var(--warm-glow);">The Arena Difference</div>
+      <h2 class="section-title" style="color:white;">Not Your Typical Consultants</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.45);">We've been on the receiving end of bad consulting. That's why we do things differently.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-col traditional">
+        <h3>Traditional Consultants</h3>
+        <div class="diff-item">
+          <div class="diff-icon">&#10005;</div>
+          <p>Hand you a 50-page report and disappear</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10005;</div>
+          <p>Staff your project with junior analysts</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10005;</div>
+          <p>Recycle generic frameworks from MBA textbooks</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10005;</div>
+          <p>Optimize for billable hours, not outcomes</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10005;</div>
+          <p>Leave when the engagement ends</p>
+        </div>
+      </div>
+      <div class="diff-col arena">
+        <h3>Arena Operators</h3>
+        <div class="diff-item">
+          <div class="diff-icon">&#10003;</div>
+          <p>Roll up our sleeves and build it with you</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10003;</div>
+          <p>Senior operators on every engagement</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10003;</div>
+          <p>Battle-tested strategies from real experience</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10003;</div>
+          <p>Aligned to your results, period</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">&#10003;</div>
+          <p>Stay until the momentum is self-sustaining</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-eyebrow">Ready to Meet?</div>
+    <h2>Let's See if We're the<br>Right Fit for Each Other</h2>
+    <p class="desc">No pitch. No pressure. Just a real conversation between operators about what's possible for your practice.</p>
+    <div class="cta-row">
+      <a href="contact.html" class="btn btn-gold btn-xl">Book Your Free Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:+17133447420" class="cta-phone-btn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (713) 344-7420</a>
+    </div>
+    <div class="cta-fine">No contracts. No obligation. No critics on the sidelines.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a>
+        <p>Former founders and operators delivering resilience, action, and deep partnership to professional services firms.</p>
+        <a href="tel:+17133447420" class="footer-phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(713) 344-7420</a>
+      </div>
+      <div class="footer-col"><h5>How We Help</h5><a href="services.html">Operations</a><a href="services.html">Growth Strategy</a><a href="services.html">Team & Leadership</a><a href="services.html">Financial Clarity</a><a href="services.html">Exit Planning</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">Our Story</a><a href="process.html">The Arena Process</a><a href="results.html">Client Results</a><a href="insights.html">Insights</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Book a Call</a><a href="#">LinkedIn</a><a href="mailto:support@thearenapartners.com">Email Us</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Arena Business Advisors. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

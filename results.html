@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDMM90P63D"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDMM90P63D');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results — Arena Business Advisors</title>
+<link rel="stylesheet" href="arena-styles.css">
+<style>
+  .metrics-bar {
+    padding: 64px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--linen);
+  }
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
+  .metric .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 700;
+    color: var(--warm-deep); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric .label {
+    font-size: 13px; color: var(--stone);
+    text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .cases { padding: 80px 0 100px; background: var(--white); }
+
+  .case-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    border: 1px solid var(--linen);
+  }
+  .case-card:nth-child(even) .case-info { order: 2; }
+  .case-card:nth-child(even) .case-sidebar { order: 1; }
+
+  .case-info {
+    padding: 52px;
+    background: var(--white);
+  }
+  .case-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--warm-deep);
+    background: var(--warm-faint);
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .case-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--ink); margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .case-challenge, .case-solution {
+    margin-bottom: 20px;
+  }
+  .case-challenge h5, .case-solution h5 {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .case-challenge h5 { color: var(--accent-rust); }
+  .case-solution h5 { color: var(--accent-sage); }
+  .case-challenge p, .case-solution p {
+    font-size: 15px; color: var(--slate);
+    line-height: 1.65;
+  }
+  .case-quote {
+    border-top: 1px solid var(--linen);
+    padding-top: 20px; margin-top: 24px;
+  }
+  .case-quote blockquote {
+    font-size: 15px; font-style: italic;
+    color: var(--ink-muted); line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .case-quote cite {
+    font-style: normal; font-size: 13px;
+    font-weight: 600; color: var(--warm-deep);
+  }
+
+  .case-sidebar {
+    background: var(--ink);
+    padding: 52px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+  }
+  .case-results-title {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--warm); margin-bottom: 28px;
+  }
+  .case-stat {
+    margin-bottom: 24px;
+  }
+  .case-stat .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 700;
+    color: var(--warm-glow); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .case-stat .desc {
+    font-size: 13px; color: rgba(255,255,255,0.45);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .case-timeline {
+    margin-top: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .case-timeline .label {
+    font-size: 11px; color: rgba(255,255,255,0.3);
+    text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 600; margin-bottom: 4px;
+  }
+  .case-timeline .time {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: white;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="top-bar">
+  <span>Operators Helping Operators &mdash; <a href="about.html">Learn Our Story</a></span>
+  <div class="top-bar-right">
+    <a href="mailto:support@thearenapartners.com">support@thearenapartners.com</a>
+    <a href="tel:+17133447420" style="color:var(--warm);font-weight:600;">(713) 344-7420</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a>
+    <ul class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">How We Help</a>
+      <a href="process.html">Process</a>
+      <a href="results.html" class="active">Results</a>
+      <a href="insights.html">Insights</a>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+17133447420" class="nav-phone"><span class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>(713) 344-7420</a>
+    <a href="contact.html" class="btn btn-gold">Book a Strategy Call</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-eyebrow">Client Results</div>
+    <h1>The Scoreboard Doesn't Lie</h1>
+    <p>Real outcomes from real practices. These are the stories of professionals who decided they deserved more&mdash;and got it.</p>
+  </div>
+</section>
+
+<!-- METRICS BAR -->
+<section class="metrics-bar">
+  <div class="container">
+    <div class="metrics-row">
+      <div class="metric"><div class="number">200+</div><div class="label">Practices Transformed</div></div>
+      <div class="metric"><div class="number">43%</div><div class="label">Avg Revenue Growth</div></div>
+      <div class="metric"><div class="number">95%</div><div class="label">Client Retention</div></div>
+      <div class="metric"><div class="number">6mo</div><div class="label">To Measurable ROI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases">
+  <div class="container">
+
+    <!-- Case 1 -->
+    <div class="case-card">
+      <div class="case-info">
+        <div class="case-tag">Medical Practice</div>
+        <h3>From 70-Hour Weeks to a Self-Running Practice</h3>
+        <div class="case-challenge">
+          <h5>The Challenge</h5>
+          <p>Dr. Sarah M. was the sole decision-maker in a 32-person orthopedic practice. Revenue was strong but growth had stalled, and burnout was setting in fast. Every patient issue, staffing problem, and operational hiccup landed on her desk.</p>
+        </div>
+        <div class="case-solution">
+          <h5>What We Did</h5>
+          <p>Restructured operations with clear decision-making authority at every level. Built a leadership bench of three clinical managers. Implemented new patient acquisition systems and optimized scheduling workflows.</p>
+        </div>
+        <div class="case-quote">
+          <blockquote>"They didn't just advise us&mdash;they got dirty. Arena understood the realities of running a medical practice in ways no consultant ever has."</blockquote>
+          <cite>Dr. Sarah M., Practice Owner</cite>
+        </div>
+      </div>
+      <div class="case-sidebar">
+        <div class="case-results-title">Results</div>
+        <div class="case-stat"><div class="value">+41%</div><div class="desc">Revenue Growth</div></div>
+        <div class="case-stat"><div class="value">-15hrs</div><div class="desc">Hours Reduced Weekly</div></div>
+        <div class="case-stat"><div class="value">89%</div><div class="desc">Staff Retention Rate</div></div>
+        <div class="case-timeline"><div class="label">Time to Impact</div><div class="time">6 Months</div></div>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+      <div class="case-info">
+        <div class="case-tag">Law Firm</div>
+        <h3>Breaking the Revenue Ceiling at a Growing Firm</h3>
+        <div class="case-challenge">
+          <h5>The Challenge</h5>
+          <p>James R. had grown his litigation firm to $4M in revenue but couldn't break through. Every new client meant more personal hours, not more leverage. Junior attorneys couldn't handle client relationships independently.</p>
+        </div>
+        <div class="case-solution">
+          <h5>What We Did</h5>
+          <p>Designed a tiered client management system that empowered associates to own relationships. Built financial dashboards for real-time practice area profitability. Created a rainmaking program for senior associates.</p>
+        </div>
+        <div class="case-quote">
+          <blockquote>"I was working harder than anyone in my firm but nothing was changing. Arena helped me stop being the employee and start being the owner."</blockquote>
+          <cite>James R., Managing Partner</cite>
+        </div>
+      </div>
+      <div class="case-sidebar">
+        <div class="case-results-title">Results</div>
+        <div class="case-stat"><div class="value">$6.2M</div><div class="desc">Revenue (from $4M)</div></div>
+        <div class="case-stat"><div class="value">3</div><div class="desc">New Rainmakers Developed</div></div>
+        <div class="case-stat"><div class="value">+22%</div><div class="desc">Net Margin Improvement</div></div>
+        <div class="case-timeline"><div class="label">Time to Impact</div><div class="time">9 Months</div></div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card">
+      <div class="case-info">
+        <div class="case-tag">CPA Advisory</div>
+        <h3>From Compliance Mill to Premium Advisory Firm</h3>
+        <div class="case-challenge">
+          <h5>The Challenge</h5>
+          <p>Karen P. ran a successful tax and compliance practice but saw advisory as the future. The problem: her team was wired for compliance, her pricing was commodity-level, and her best clients were being poached by advisory-focused competitors.</p>
+        </div>
+        <div class="case-solution">
+          <h5>What We Did</h5>
+          <p>Repositioned the firm around advisory-led service packages. Redesigned pricing from hourly to value-based. Trained the team on consultative client conversations. Built a referral engine targeting high-net-worth business owners.</p>
+        </div>
+        <div class="case-quote">
+          <blockquote>"As a CPA, I thought I understood business. Arena showed me the difference between knowing the numbers and actually operating a high-performing firm."</blockquote>
+          <cite>Karen P., Founder</cite>
+        </div>
+      </div>
+      <div class="case-sidebar">
+        <div class="case-results-title">Results</div>
+        <div class="case-stat"><div class="value">2.4x</div><div class="desc">Revenue Per Client</div></div>
+        <div class="case-stat"><div class="value">+38%</div><div class="desc">Total Revenue Growth</div></div>
+        <div class="case-stat"><div class="value">0</div><div class="desc">Client Losses to Competitors</div></div>
+        <div class="case-timeline"><div class="label">Time to Impact</div><div class="time">12 Months</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-eyebrow">Your Story Next?</div>
+    <h2>These Results Are Real.<br>Yours Could Be Too.</h2>
+    <p class="desc">Every case study on this page started with a single conversation. No commitment. No pressure. Just an honest assessment of what's possible.</p>
+    <div class="cta-row">
+      <a href="contact.html" class="btn btn-gold btn-xl">Book Your Free Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:+17133447420" class="cta-phone-btn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (713) 344-7420</a>
+    </div>
+    <div class="cta-fine">No contracts. No obligation. No critics on the sidelines.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">A</span>Arena</a><p>Former founders and operators delivering resilience, action, and deep partnership to professional services firms.</p><a href="tel:+17133447420" class="footer-phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(713) 344-7420</a></div>
+      <div class="footer-col"><h5>How We Help</h5><a href="services.html">Operations</a><a href="services.html">Growth Strategy</a><a href="services.html">Team & Leadership</a><a href="services.html">Financial Clarity</a><a href="services.html">Exit Planning</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">Our Story</a><a href="process.html">The Arena Process</a><a href="results.html">Client Results</a><a href="insights.html">Insights</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Book a Call</a><a href="#">LinkedIn</a><a href="mailto:support@thearenapartners.com">Email Us</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Arena Business Advisors. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+</body>
+</html>
